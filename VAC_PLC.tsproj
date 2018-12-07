@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.22">
+	<Project ProjectGUID="{732E1FE9-DE14-4E57-AF0E-D09B67267D6B}" TargetNetId="5.52.45.88.1.1" ShowHideConfigurations="#x106">
+		<System>
+			<Tasks>
+				<Task Id="2" Priority="20" CycleTime="100000" AmsPort="350">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+			<Routes>
+				<Route Name="ioc-tst-rec02" Addr="172.21.42.102" NetId="172.21.42.102.1.1" TransType="1"/>
+			</Routes>
+		</System>
+		<Plc>
+			<Project File="VAC_PLC.xti"/>
+		</Plc>
+	</Project>
+</TcSmProject>

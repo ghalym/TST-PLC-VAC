@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+  <GVL Name="GVL_Devices" Id="{fc25c9fe-7708-42a4-ad69-f269fb463f1f}">
+    <Declaration><![CDATA[
+VAR_GLOBAL
+
+	{attribute 'pytmc' := '
+    pv: FEE:GPI:01
+	'}
+	FEE_GPI_01 : FB_MKS275;
+	{attribute 'pytmc' := '
+    pv: FEE:GCC:01
+	'}
+	FEE_GCC_01: FB_MKS500;	
+
+	{attribute 'pytmc' := '
+    pv: FEE:VGC:01
+	'}
+	FEE_VGC_01: FB_VGC;	
+	
+	
+	{attribute 'pytmc' := '
+    pv: FEE:GPI:02
+	'}
+	FEE_GPI_02 : FB_MKS275;
+	{attribute 'pytmc' := '
+    pv: FEE:GCC:02
+	'}
+	FEE_GCC_02: FB_MKS500;	
+	
+	{attribute 'pytmc' := '
+    pv: FEE:PIP:01
+	'}
+	FEE_PIP_01: FB_PIP_Gamma;	
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

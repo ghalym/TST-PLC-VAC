@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+  <POU Name="POU_Example" Id="{5d330a11-7bbf-4631-b77e-0e51d0207e45}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM POU_Example
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Here we call all the function block that have been declared in GVL_Devices*)
+
+
+//Pirani Gauges
+FEE_GPI_01();
+FEE_GPI_02(PG=>);
+// Ion Gauges
+FEE_GCC_01(PG:= FEE_GPI_01.PG);
+FEE_GCC_02(PG:= FEE_GPI_02.PG, IG=>);
+
+//Isolation Valves
+FEE_VGC_01(i_stUSG := FEE_GCC_01.IG, i_stDSG := FEE_GCC_02.IG, i_xDis_DPIlk:=TRUE, i_xEPS_OK:= TRUE, i_xPMPS_OK :=TRUE);
+
+//Ion Pumps
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="POU_Example">
+      <LineId Id="10" Count="2" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="5" Count="1" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
